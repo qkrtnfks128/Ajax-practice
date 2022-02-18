@@ -12,12 +12,25 @@
   </article>
   <input type="button" value="fetch" 
   onclick="
-  fetch('css').then(function(response){
-    response.text().then(function(text){
-      document.querySelector('article').innerHTML = text;
-    })
-  })
-  "
+  // fetch('css').then(function(response){
+  //   response.text().then(function(text){
+  //     document.querySelector('article').innerHTML = text;
+  //   })
+  // })
+    //Asynchronous
+    // function callback(){
+    //   console.log('response end');
+    // }
+    fetch('css').then(function(response){
+      console.log(response.status);
+      if(response.status=='404'){
+        console.log('페이지받기 실패')
+      }
+      else{
+        console.log('페이지 잘받아옴')
+      }
+    });
+    "
   >
 </body>
 </html>
